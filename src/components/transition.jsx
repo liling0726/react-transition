@@ -46,7 +46,7 @@ export default class TransitionItem extends React.Component {
     console.log('exiting')
   }
   handleExited = (node) => {
-    console.log('exit')
+    console.log('exited')
   }
   render() {
     const { show, isEnter, isExit } = this.state
@@ -61,7 +61,7 @@ export default class TransitionItem extends React.Component {
         /* exit={isExit} */
         in={show}
         onEnter={this.handleEnter}
-        onEntered={this.handleEnted}
+        onEntered={this.handleEntered}
         onEntering={this.handleEntering}
         onExit={this.handleExit}
         onExited={this.handleExited}

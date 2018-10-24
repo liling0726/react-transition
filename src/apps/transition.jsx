@@ -6,18 +6,33 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 //页面
 import Index from '@/routes/Index'
-import Transition  from '@/components/transition'
-import CSSTransition  from '@/components/cssTransition'
-import TransitionGroup  from '@/components/transitionGroup'
+import TransitionItem from '@/components/transition'
+import CSSTransitionItem from '@/components/cssTransition'
+import TransitionGroupItem from '@/components/transitionGroup'
+import './transition.less'
 class App extends React.Component {
   render() {
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <TransitionGroup
+        className="transition-wrapper"
+        style={{ position: 'relative', width: '100%' }}
+        >
+        < CSSTransition
+          classNames="page-transition-item"
+          key={this.props.location.pathname}
+          timeout={1000}
+        >
+          <div key={this.props.location.pathname}
+            style={{ position: 'absolute', width: '100%' }}>
+            {
+              this.props.children
+            }
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
     )
   }
 }
@@ -28,13 +43,13 @@ const routes = (
     >
       <IndexRoute component={Index}
       />
-      <Route component={Transition}
+      <Route component={TransitionItem}
         path="transition"
       />
-      <Route component={CSSTransition}
+      <Route component={CSSTransitionItem}
         path="cssTransition"
       />
-      <Route component={TransitionGroup}
+      <Route component={TransitionGroupItem}
         path="transitionGroup"
       />
     </Route>

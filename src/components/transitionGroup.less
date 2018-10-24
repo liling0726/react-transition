@@ -1,0 +1,39 @@
+ul,
+body,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 200px;
+  .carousel-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .carousel-image-item-enter {
+      position: absolute;
+      opacity: 0.01;
+      &.carousel-image-item-enter-active {
+        opacity: 1;
+        transition: 1s opacity ease-in-out;
+      }
+    }
+    &.carousel-item-leave {
+      position: absolute;
+      opacity: 1;
+      &.carousel-image-item-leave-active {
+        opacity: 0.01;
+        transition: 1s opacity ease-in-out;
+      }
+    }
+  }
+}

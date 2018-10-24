@@ -1,6 +1,62 @@
-.message-enter{
-  color:bule;
+.img-wrap{
+  height:210px;
+  overflow: hidden;
 }
-.message-enter-active{
-  color:red;
+.img-wrap img {
+  width: 100%;
+}
+.transition-enter{
+  opacity: 0.1;
+}
+.transition-enter-active {
+  opacity: 0.5;
+  transform: scale(.5) translateY(-75%) rotate(360deg);
+  transition: all 300ms ease-out;
+}
+.transition-enter-done {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  transition: all 300ms ease-out;
+}
+.transition-exit{
+  opacity: 0.8;
+  transform: scale(2) rotate(-360deg);
+  transition: all 300ms ease-out;
+}
+.transition-exit-active{
+  opacity: 0.5;
+  transform: scale(.1) rotate(-360deg);
+  transition: all 300ms ease-out;
+}
+.transition-exit-done {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease-out;
+}
+.transition-appear{
+  opacity: 0;
+}
+.transition-appear-active{
+  opacity: 0.5;
+}
+
+.toggle-btn-wrap {
+  margin: 50px 15px 15px 15px;
+}
+
+.toggle-btn {
+  background-color: #328af8;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+
+.toggle-btn:focus {
+  outline: 0;
 }
